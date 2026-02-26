@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMA Prüfungsvorbereitung</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #e2e8f0;
+        }
+        .container {
+            text-align: center;
+            padding: 40px 20px;
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #fbbf24;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            margin-bottom: 50px;
+            line-height: 1.6;
+        }
+        .button-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .btn {
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            font-weight: 600;
+            min-width: 220px;
+        }
+        .btn-quiz {
+            background: #f59e0b;
+            color: #0f172a;
+        }
+        .btn-quiz:hover {
+            background: #fbbf24;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+        }
+        .btn-learn {
+            background: #60a5fa;
+            color: #fff;
+        }
+        .btn-learn:hover {
+            background: #93c5fd;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(96, 165, 250, 0.3);
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            .button-group {
+                flex-direction: column;
+            }
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 PMA Prüfungsvorbereitung</h1>
+        <p>Wähle zwischen Quiz und Lernzusammenfassung</p>
+        <div class="button-group">
+            <a href="Vorbereitung auf der Prüfung.html" class="btn btn-quiz">🎯 Quiz starten</a>
+            <a href="PMA Lernzusammenfassung.html" class="btn btn-learn">📖 Lernen</a>
+        </div>
+    </div>
+</body>
+</html>
