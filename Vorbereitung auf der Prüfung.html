@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PMA Pr&#252;fungsvorbereitung 424 Fragen</title>
+    <title>PMA Pr&#252;fungsvorbereitung - 424 Fragen</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -15,7 +15,7 @@
         .header {
             background: linear-gradient(135deg, #1e293b, #334155);
             padding: 20px 30px;
-            border-bottom: 2px solid #3b82f6;
+            border-bottom: 2px solid #f63bbe;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -39,7 +39,7 @@
         }
         .stat.correct { border-color: #22c55e; color: #86efac; }
         .stat.wrong { border-color: #ef4444; color: #fca5a5; }
-        .stat.open { border-color: #3b82f6; color: #93c5fd; }
+        .stat.open { border-color: #f63bbe; color: #93c5fd; }
         .controls {
             display: flex;
             gap: 10px;
@@ -57,8 +57,8 @@
             font-size: 0.85rem;
             transition: all 0.2s;
         }
-        .controls button:hover { background: #334155; border-color: #3b82f6; }
-        .controls button.active { background: #3b82f6; border-color: #3b82f6; color: white; }
+        .controls button:hover { background: #334155; border-color: #f63bbe; }
+        .controls button.active { background: #f63bbe; border-color: #f63bbe; color: white; }
         .progress-bar-container {
             width: 100%;
             height: 6px;
@@ -69,7 +69,7 @@
         }
         .progress-bar {
             height: 100%;
-            background: linear-gradient(90deg, #22c55e, #3b82f6);
+            background: linear-gradient(90deg, #22c55e, #f63bbe);
             border-radius: 3px;
             transition: width 0.3s;
         }
@@ -103,7 +103,7 @@
         }
         .q-number {
             font-weight: 700;
-            color: #3b82f6;
+            color: #f63bbe;
             font-size: 1rem;
         }
         .q-badge {
@@ -147,11 +147,11 @@
             user-select: none;
         }
         .option:hover:not(.disabled) {
-            border-color: #3b82f6;
+            border-color: #f63bbe;
             background: #162033;
         }
         .option.selected {
-            border-color: #3b82f6;
+            border-color: #f63bbe;
             background: #1e3a5f;
         }
         .option.correct-revealed {
@@ -179,8 +179,8 @@
             transition: all 0.2s;
         }
         .option.selected .checkbox {
-            background: #3b82f6;
-            border-color: #3b82f6;
+            background: #f63bbe;
+            border-color: #f63bbe;
         }
         .option.correct-revealed .checkbox {
             background: #22c55e;
@@ -197,7 +197,7 @@
         .check-btn {
             margin-top: 14px;
             padding: 10px 24px;
-            background: #3b82f6;
+            background: #f63bbe;
             color: white;
             border: none;
             border-radius: 8px;
@@ -279,7 +279,7 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background: #3b82f6;
+            background: #f63bbe;
             color: white;
             border: none;
             border-radius: 50%;
