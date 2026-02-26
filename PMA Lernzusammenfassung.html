@@ -1,0 +1,2219 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMA Prüfungsvorbereitung - Lernzusammenfassung</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            min-height: 100vh;
+            line-height: 1.7;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e293b, #334155);
+            padding: 10px 20px;
+            border-bottom: 2px solid #f59e0b;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-top {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .header h1 {
+            font-size: 1.05rem;
+            color: #fbbf24;
+            margin: 0;
+        }
+        .header p {
+            display: none;
+        }
+        .nav-bar {
+            display: flex;
+            gap: 5px;
+            margin-top: 8px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .nav-bar a {
+            padding: 3px 9px;
+            border-radius: 20px;
+            border: 1px solid #475569;
+            background: #1e293b;
+            color: #e2e8f0;
+            cursor: pointer;
+            font-size: 0.72rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .nav-bar a:hover {
+            background: #334155;
+            border-color: #f59e0b;
+            color: #fbbf24;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 0;
+            color: #60a5fa;
+            text-decoration: none;
+            font-size: 0.78rem;
+            white-space: nowrap;
+        }
+        .back-link:hover { text-decoration: underline; }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 24px 20px 80px;
+        }
+        .topic-section {
+            margin-bottom: 40px;
+            scroll-margin-top: 110px;
+        }
+        .topic-title {
+            font-size: 1.5rem;
+            color: #fbbf24;
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #f59e0b33;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .topic-title .icon { font-size: 1.3rem; }
+        .topic-subtitle {
+            font-size: 1.1rem;
+            color: #93c5fd;
+            margin: 20px 0 10px;
+            padding-left: 4px;
+        }
+        .topic-intro {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+        .card {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 14px;
+            border: 1px solid #334155;
+        }
+        .card h3 {
+            color: #60a5fa;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+        .card p, .card li {
+            color: #cbd5e1;
+            font-size: 0.92rem;
+        }
+        .card ul, .card ol {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+        .card li {
+            margin-bottom: 5px;
+        }
+        .highlight {
+            background: #052e16;
+            border: 1px solid #22c55e;
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin: 12px 0;
+        }
+        .highlight-title {
+            color: #86efac;
+            font-weight: 700;
+            font-size: 0.88rem;
+            margin-bottom: 6px;
+        }
+        .highlight p, .highlight li {
+            color: #bbf7d0;
+            font-size: 0.88rem;
+        }
+        .warning {
+            background: #350a0a;
+            border: 1px solid #ef4444;
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin: 12px 0;
+        }
+        .warning-title {
+            color: #fca5a5;
+            font-weight: 700;
+            font-size: 0.88rem;
+            margin-bottom: 6px;
+        }
+        .warning p, .warning li {
+            color: #fecaca;
+            font-size: 0.88rem;
+        }
+        .info {
+            background: #0c1a3d;
+            border: 1px solid #3b82f6;
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin: 12px 0;
+        }
+        .info-title {
+            color: #93c5fd;
+            font-weight: 700;
+            font-size: 0.88rem;
+            margin-bottom: 6px;
+        }
+        .info p, .info li {
+            color: #bfdbfe;
+            font-size: 0.88rem;
+        }
+        .tip {
+            background: #1a1033;
+            border: 1px solid #8b5cf6;
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin: 12px 0;
+        }
+        .tip-title {
+            color: #c4b5fd;
+            font-weight: 700;
+            font-size: 0.88rem;
+            margin-bottom: 6px;
+        }
+        .tip p, .tip li {
+            color: #ddd6fe;
+            font-size: 0.88rem;
+        }
+        .quiz-ref {
+            display: inline-block;
+            background: #374151;
+            color: #9ca3af;
+            font-size: 0.72rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-left: 6px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 0.88rem;
+        }
+        th {
+            background: #334155;
+            color: #93c5fd;
+            padding: 10px 14px;
+            text-align: left;
+            border: 1px solid #475569;
+        }
+        td {
+            padding: 10px 14px;
+            border: 1px solid #334155;
+            color: #cbd5e1;
+        }
+        tr:nth-child(even) td {
+            background: #1a2332;
+        }
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #f59e0b;
+            color: #0f172a;
+            border: none;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: none;
+            z-index: 99;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            font-weight: bold;
+        }
+        .scroll-top.visible { display: block; }
+        .search-container {
+            margin-top: 0;
+        }
+        .search-box {
+            padding: 4px 10px;
+            border-radius: 8px;
+            border: 1px solid #475569;
+            background: #0f172a;
+            color: #e2e8f0;
+            font-size: 0.78rem;
+            width: 180px;
+        }
+        .search-box::placeholder { color: #64748b; }
+        .toc {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 30px;
+            border: 1px solid #f59e0b44;
+        }
+        .toc h2 {
+            color: #fbbf24;
+            font-size: 1.15rem;
+            margin-bottom: 14px;
+        }
+        .toc ol {
+            padding-left: 22px;
+        }
+        .toc li {
+            margin-bottom: 5px;
+        }
+        .toc a {
+            color: #60a5fa;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .toc a:hover {
+            text-decoration: underline;
+            color: #93c5fd;
+        }
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin: 12px 0;
+        }
+        .comparison-grid .card {
+            margin: 0;
+        }
+        strong { color: #fbbf24; }
+        em { color: #c4b5fd; font-style: italic; }
+        @media (max-width: 700px) {
+            .header { padding: 14px 16px; }
+            .header h1 { font-size: 1.2rem; }
+            .container { padding: 14px 12px 60px; }
+            .card { padding: 14px 16px; }
+            .comparison-grid { grid-template-columns: 1fr; }
+            .nav-bar a { font-size: 0.7rem; padding: 4px 10px; }
+            .search-box { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-top">
+            <h1>&#128218; PMA Pr&uuml;fungsvorbereitung &ndash; Lernzusammenfassung</h1>
+            <a class="back-link" href="Vorbereitung auf der Prüfung.html">&larr; Zur&uuml;ck zum Quiz</a>
+            <div class="search-container">
+                <input type="text" class="search-box" id="search" placeholder="Thema suchen..." oninput="filterSections()">
+            </div>
+        </div>
+        <div class="nav-bar" id="nav-bar">
+            <a href="#s1">Grundlagen</a>
+            <a href="#s2">PM-Prozess</a>
+            <a href="#s3">Projektstart</a>
+            <a href="#s4">Systeme &amp; Erfolg</a>
+            <a href="#s5">Qualit&auml;t</a>
+            <a href="#s6">Kontext</a>
+            <a href="#s7">Umweltanalyse</a>
+            <a href="#s8">Business Case</a>
+            <a href="#s9">Projektmarketing</a>
+            <a href="#s10">Organisation</a>
+            <a href="#s11">Rollen &amp; Teams</a>
+            <a href="#s12">Kommunikation</a>
+            <a href="#s13">Projektziele</a>
+            <a href="#s14">Strukturplan</a>
+            <a href="#s15">Terminplanung</a>
+            <a href="#s16">Ressourcen &amp; Kosten</a>
+            <a href="#s17">Risiko &amp; Doku</a>
+            <a href="#s18">Change Mgmt</a>
+            <a href="#s19">Controlling</a>
+            <a href="#s20">Earned Value</a>
+            <a href="#s21">Projektabschluss</a>
+            <a href="#s22">Diskontinuit&auml;t</a>
+            <a href="#s23">Programme</a>
+            <a href="#s24">Beauftragung</a>
+            <a href="#s25">Audit</a>
+            <a href="#s26">Portfolio</a>
+            <a href="#s27">POU</a>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- INHALTSVERZEICHNIS -->
+        <div class="toc">
+            <h2>Inhaltsverzeichnis</h2>
+            <ol>
+                <li><a href="#s1">Projekt-Grundlagen &amp; Projektarten</a></li>
+                <li><a href="#s2">Projektmanagement-Prozess</a></li>
+                <li><a href="#s3">Projektstartprozess</a></li>
+                <li><a href="#s4">Systeme &amp; Projekterfolg</a></li>
+                <li><a href="#s5">Projektqualit&auml;t</a></li>
+                <li><a href="#s6">Projektkontext &amp; Abgrenzung</a></li>
+                <li><a href="#s7">Projektumweltanalyse</a></li>
+                <li><a href="#s8">Business Case</a></li>
+                <li><a href="#s9">Projektmarketing</a></li>
+                <li><a href="#s10">Projektorganisation</a></li>
+                <li><a href="#s11">Rollen, Teams &amp; F&uuml;hrung</a></li>
+                <li><a href="#s12">Kommunikation &amp; Projektkultur</a></li>
+                <li><a href="#s13">Projektziele</a></li>
+                <li><a href="#s14">Strukturplanung (OSP, PSP, Arbeitspakete)</a></li>
+                <li><a href="#s15">Terminplanung</a></li>
+                <li><a href="#s16">Ressourcen-, Kosten- &amp; Finanzplanung</a></li>
+                <li><a href="#s17">Risikomanagement &amp; Dokumentation</a></li>
+                <li><a href="#s18">Change Management im Projekt</a></li>
+                <li><a href="#s19">Projektcontrolling</a></li>
+                <li><a href="#s20">Earned Value Analyse</a></li>
+                <li><a href="#s21">Projektabschlussprozess</a></li>
+                <li><a href="#s22">Projektdiskontinuit&auml;t &amp; Krisenmanagement</a></li>
+                <li><a href="#s23">Programme &amp; Programmmanagement</a></li>
+                <li><a href="#s24">Projektbeauftragung &amp; Projektauftrag</a></li>
+                <li><a href="#s25">Investitionsevaluierung &amp; Management-Audit</a></li>
+                <li><a href="#s26">Projektportfolio</a></li>
+                <li><a href="#s27">Projektorientiertes Unternehmen (POU)</a></li>
+            </ol>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SEKTION 1: PROJEKT-GRUNDLAGEN -->
+        <!-- ============================================ -->
+        <div class="topic-section" id="s1">
+            <h2 class="topic-title"><span class="icon">&#128204;</span> 1. Projekt-Grundlagen &amp; Projektarten</h2>
+            <p class="topic-intro">Fragen 1&ndash;10 im Quiz</p>
+
+            <div class="card">
+                <h3>Was ist ein Projekt?</h3>
+                <p>Ein Projekt ist ein <strong>einmaliges, zeitlich begrenztes Vorhaben</strong> mit folgenden Merkmalen:</p>
+                <ul>
+                    <li><strong>Zieldeterminiert</strong> &ndash; Es gibt definierte Ziele</li>
+                    <li><strong>Setzt einen Projektauftrag voraus</strong> &ndash; Formaler Startpunkt</li>
+                    <li><strong>Kostet Geld</strong> &ndash; Ressourcen werden ben&ouml;tigt</li>
+                </ul>
+                <div class="warning">
+                    <div class="warning-title">&#9888;&#65039; H&auml;ufiger Fehler</div>
+                    <p>&bdquo;Ein Projekt dauert nie l&auml;nger als ein Jahr&ldquo; ist <strong>FALSCH</strong>! Es gibt keine generelle Zeitbeschr&auml;nkung.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Warum Projekte?</h3>
+                <p>Projekte haben folgende Bedeutung f&uuml;r Unternehmen:</p>
+                <ul>
+                    <li>Sie <strong>erh&ouml;hen die Flexibilit&auml;t</strong> von Unternehmen</li>
+                    <li>Sie stehen in <strong>Beziehung zur Stammorganisation</strong></li>
+                    <li>Sie sind ein <strong>Instrument zur organisatorischen Differenzierung</strong></li>
+                </ul>
+                <div class="warning">
+                    <div class="warning-title">&#9888;&#65039; H&auml;ufiger Fehler</div>
+                    <p>Projekte werden <strong>NICHT immer unternehmens&uuml;bergreifend</strong> durchgef&uuml;hrt!</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Gesch&auml;ftsprozesse als Projekte</h3>
+                <p>Gesch&auml;ftsprozesse, die als Projekte durchgef&uuml;hrt werden, sind:</p>
+                <ul>
+                    <li><strong>Umfangreich</strong></li>
+                    <li><strong>Relativ neuartig</strong></li>
+                    <li><strong>Tempor&auml;r</strong> (zeitlich begrenzt)</li>
+                </ul>
+                <div class="warning">
+                    <div class="warning-title">&#9888;&#65039; H&auml;ufiger Fehler</div>
+                    <p>&bdquo;Produktionsorientiert&ldquo; ist <strong>FALSCH</strong>! Produktion ist ein Routineprozess, kein Projekt.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Kleinprojekte vs. Projekte</h3>
+                <p>Kleinprojekte unterscheiden sich von Projekten durch:</p>
+                <ul>
+                    <li><strong>Hierarchisch weniger hochrangige Besetzung</strong> der Projektauftraggeberrolle</li>
+                    <li><strong>Geringerer Einsatz</strong> von PM-Methoden</li>
+                    <li><strong>Geringerer Projektmarketing-Bedarf</strong></li>
+                </ul>
+                <div class="warning">
+                    <div class="warning-title">&#9888;&#65039; H&auml;ufiger Fehler</div>
+                    <p>Kleinprojekte haben <strong>KEINEN gr&ouml;&szlig;eren Detaillierungsgrad</strong> der Projektpl&auml;ne &ndash; das ist bei gro&szlig;en Projekten der Fall!</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Interne vs. Externe Projekte</h3>
+                <div class="comparison-grid">
+                    <div class="card">
+                        <h3>Interne Projekte</h3>
+                        <ul>
+                            <li><strong>Unternehmensinterne Zielsetzung</strong></li>
+                            <li>Haben trotzdem einen Projektauftraggeber!</li>
+                            <li>Komplexit&auml;t ist nicht automatisch geringer</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Externe Projekte</h3>
+                        <ul>
+                            <li>Basieren auf einem <strong>Auftrag eines externen Kunden</strong></li>
+                            <li>Keine maximale Begrenzung auf 6 Monate</li>
+                            <li>Ben&ouml;tigen nicht 2 PM</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Projektarten &ndash; Unterscheidungskriterien</h3>
+                <p>Projektarten k&ouml;nnen unterschieden werden nach:</p>
+                <ul>
+                    <li><strong>Inhaltlichen Zielen</strong> (z.B. IT, Organisation, Marketing)</li>
+                    <li><strong>Wiederholungsgrad</strong> (einmalig, repetitiv)</li>
+                    <li><strong>Bezug zu Gesch&auml;ftsprozessen</strong></li>
+                    <li><strong>Branchen</strong></li>
+                    <li><strong>Komplexit&auml;t</strong></li>
+                    <li><strong>Projektzielen</strong></li>
+                </ul>
+                <div class="warning">
+                    <div class="warning-title">&#9888;&#65039; H&auml;ufige Fehler</div>
+                    <p>&bdquo;Art der Auftraggeberschaft&ldquo; ist bei F7 <strong>FALSCH</strong>.</p>
+                    <p>&bdquo;Nach dem/der Projektmanager/in&ldquo; ist bei F8 <strong>FALSCH</strong>. Ein PM definiert keine Projektart!</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Projektarten &ndash; Beispiele</h3>
+                <table>
+                    <tr>
+                        <th>Projektart</th>
+                        <th>Beschreibung</th>
+                    </tr>
+                    <tr>
+                        <td><strong>IT-Projekt</strong></td>
+                        <td>Software, Systeme, IT-Infrastruktur</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Organisationsentwicklung</strong></td>
+                        <td>Prozess&auml;nderungen, Umstrukturierungen</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Implementierungsprojekt</strong></td>
+                        <td>Einf&uuml;hrung von Systemen/Prozessen</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Realisierungsprojekt</strong></td>
+                        <td>Umsetzung konkreter Vorhaben</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Konzeptionsprojekt</strong></td>
+                        <td>Erarbeitung von Konzepten</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Repetitives Projekt</strong></td>
+                        <td>Wiederkehrendes Projektmuster</td>
+                    </tr>
+                </table>
+                <div class="tip">
+                    <div class="tip-title">&#128161; Tipp f&uuml;r die Pr&uuml;fung</div>
+                    <p>Ein Projekt kann <strong>mehreren Projektarten gleichzeitig</strong> zugeordnet werden! Z.B. &bdquo;Zeiterfassung&ldquo; = IT- UND Organisationsentwicklungs- UND Implementierungsprojekt UND internes Projekt.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Projekte-Kette</h3>
+                <p>Eine grafische Darstellung, die mehrere aufeinanderfolgende Projekte zeigt, wird als <strong>Projekte-Kette</strong> bezeichnet.</p>
+                <div class="warning">
+                    <div class="warning-title">&#9888;&#65039; Verwechslungsgefahr</div>
+                    <p>Nicht verwechseln mit: Objektlebenszyklus, Projektportfolio oder Projektumweltanalyse!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SEKTION 2: PM-PROZESS -->
+        <!-- ============================================ -->
+        <div class="topic-section" id="s2">
+            <h2 class="topic-title"><span class="icon">&#9881;&#65039;</span> 2. Projektmanagement-Prozess</h2>
+            <p class="topic-intro">Fragen 12&ndash;22 im Quiz</p>
+
+            <div class="card">
+                <h3>Betrachtungsobjekte des Projektmanagements</h3>
+                <p>Das PM betrachtet unter anderem:</p>
+                <ul>
+                    <li><strong>Projektziele</strong></li>
+                    <li><strong>Projektleistungen</strong></li>
+                    <li><strong>Projekttermine</strong></li>
+                    <li><strong>Projektorganisation</strong></li>
+                    <li><strong>Projektkultur</strong></li>
+                    <li><strong>Projektressourcen</strong></li>
+                    <li><strong>Projektkosten</strong></li>
+                    <li><strong>Projektrisiken</strong></li>
+                    <li><strong>Projektkontext</strong></li>
+                </ul>
+                <div class="warning">
+                    <div class="warning-title">&#9888;&#65039; H&auml;ufiger Fehler</div>
+                    <p>&bdquo;Projektableitungen&ldquo;, &bdquo;Projektverf&uuml;gungen&ldquo; und &bdquo;Projektabteilungen&ldquo; sind <strong>KEINE</strong> Betrachtungsobjekte!</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Nutzen von Projektmanagement</h3>
+                <ul>
+                    <li><strong>Sicherung der Qualit&auml;t</strong> der Projektarbeit</li>
+                    <li><strong>Vermeidung von Doppelarbeit</strong></li>
+                    <li><strong>Sicherstellung der Kommunikation</strong> zwischen Beteiligten</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>PM-Aufgaben</h3>
+                <ul>
+                    <li>Gestaltung des <strong>Projektstartprozesses</strong></li>
+                    <li>Gestaltung des <strong>Projektkoordinationsprozesses</strong></li>
+                    <li>Gestaltung des <strong>Projektcontrollingprozesses</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Der Projektmanagementprozess</h3>
+                <p>Der PM-Prozess:</p>
+                <ul>
+                    <li>Ist ein <strong>Gesch&auml;ftsprozess</strong></li>
+                    <li>Kann in <strong>Teilprozesse</strong> gegliedert werden</li>
+                    <li>Wird <strong>parallel</strong> zum Leistungserstellungsprozess durchgef&uuml;hrt</li>
+                </ul>
+                <div class="warning">
+                    <div class="warning-title">&#9888;&#65039; H&auml;ufiger Fehler</div>
+                    <p>Der PM-Prozess wird <strong>NICHT nur einmal</strong> am Anfang durchgef&uuml;hrt &ndash; er l&auml;uft &uuml;ber die gesamte Projektdauer!</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Teilprozesse des Projektmanagements</h3>
+                <div class="highlight">
+                    <div class="highlight-title">&#9989; Die 5 PM-Teilprozesse merken!</div>
+                    <ol>
+                        <li><strong>Projektstartprozess</strong></li>
+                        <li><strong>Projektkoordinationsprozess</strong> (laufende Koordination)</li>
+                        <li><strong>Projektcontrollingprozess</strong></li>
+                        <li><strong>Management von Projektdiskontinuit&auml;ten</strong></li>
+                        <li><strong>Projektabschlussprozess</strong></li>
+                    </ol>
+                </div>
+                <div class="warning">
+                    <div class="warning-title">&#9888;&#65039; Falsche Teilprozesse</div>
+                    <p>&bdquo;Projektplanungsprozess&ldquo;, &bdquo;Projektinstallationsprozess&ldquo; und &bdquo;Projektrealisierungsprozess&ldquo; sind <strong>KEINE</strong> PM-Teilprozesse!</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Ziele des PM-Prozesses</h3>
+                <ul>
+                    <li><strong>Gemeinsame Sicht</strong> aller Projektteammitglieder auf das Projekt herstellen (&bdquo;Big Project Picture&ldquo;)</li>
+                    <li><strong>Know-how Transfer</strong> ins Unternehmen sicherstellen</li>
+                    <li><strong>Adäquate Projektorganisation</strong> gestalten</li>
+                    <li><strong>Kommunikationsstrukturen</strong> definieren</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Gestaltung des PM-Prozesses</h3>
+                <p>Wird wahrgenommen durch:</p>
+                <ul>
+                    <li>Den/die <strong>Projektmanager/in</strong></li>
+                    <li>Das <strong>Projektteam</strong></li>
+                    <li>Den/die <strong>Projektauftraggeber/in</strong></li>
+                </ul>
+                <p>Elemente der Gestaltung:</p>
+                <ul>
+                    <li><strong>PM-Methoden</strong></li>
+                    <li><strong>PM-Kommunikationsstrukturen</strong></li>
+                    <li><strong>PM-Software</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>PM-Software &amp; IT-Einsatz</h3>
+                <ul>
+                    <li>PM-Software (z.B. MS Project) <strong>unterst&uuml;tzt die Terminplanung und Ressourcenplanung</strong></li>
+                    <li>Sie kann <strong>Standard- und Individualberichte</strong> generieren</li>
+                    <li>Das <strong>Projekthandbuch</strong> kann in einer Datei gespeichert werden, muss aber regelm&auml;&szlig;ig <strong>allen Teammitgliedern zur Verf&uuml;gung gestellt</strong> werden</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Kommunikationsformen im PM-Prozess</h3>
+                <ul>
+                    <li><strong>Projektstart-Workshop</strong></li>
+                    <li><strong>Projektteamsitzungen</strong></li>
+                    <li><strong>Projektcontrolling-Sitzungen</strong></li>
+                    <li><strong>Projekt-Jour-fix</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SEKTION 3: PROJEKTSTARTPROZESS -->
+        <!-- ============================================ -->
+        <div class="topic-section" id="s3">
+            <h2 class="topic-title"><span class="icon">&#128640;</span> 3. Projektstartprozess</h2>
+            <p class="topic-intro">Fragen 23&ndash;35 im Quiz</p>
+
+            <div class="card">
+                <h3>Kennzeichen des Projektstartprozesses</h3>
+                <ul>
+                    <li>Wird f&uuml;r <strong>alle Projekte</strong> durchgef&uuml;hrt</li>
+                    <li>Ergebnis: <strong>Erstellung der Projektpl&auml;ne</strong></li>
+                    <li>Ist der <strong>erste Teilprozess des PM</strong></li>
+                    <li>Ein <strong>Projektstart-Workshop</strong> ist eine m&ouml;gliche Methode</li>
+                </ul>
+                <div class="warning">
+                    <div class="warning-title">&#9888;&#65039; H&auml;ufige Fehler</div>
+                    <p>Der Projektstartprozess dauert <strong>NICHT nur 2 Tage</strong>! Er kann l&auml;nger dauern.</p>
+                    <p>Er ist <strong>NICHT nur bei externen Projekten</strong> durchzuf&uuml;hren!</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Ziele des Projektstartprozesses</h3>
+                <ul>
+                    <li><strong>Definition von Projektzielen</strong></li>
+                    <li><strong>Etablierung einer adäquaten Projektorganisation</strong></li>
+                    <li><strong>Erstellung von Projektplänen</strong></li>
+                    <li><strong>Know-how-Aufbau</strong> zum Projektgegenstand</li>
+                    <li><strong>Teambuilding</strong> &ndash; gemeinsame Sicht (&bdquo;Big Project Picture&ldquo;)</li>
+                    <li><strong>Gestaltung der Beziehungen</strong> zu relevanten Umwelten</li>
+                    <li><strong>Planung von Marketingmaßnahmen</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Ergebnisse (Dokumente) des Projektstartprozesses</h3>
+                <div class="highlight">
+                    <div class="highlight-title">&#9989; Wichtig: Welche Dokumente entstehen beim Projektstart?</div>
+                    <ul>
+                        <li><strong>Projektorganigramm</strong></li>
+                        <li><strong>Funktionendiagramm</strong> (Rollenverteilung)</li>
+                        <li><strong>Projektstrukturplan (PSP)</strong></li>
+                        <li><strong>Arbeitspaketspezifikationen</strong></li>
+                        <li><strong>Meilensteinplan</strong> / Terminplan</li>
+                        <li><strong>Projektumweltanalyse</strong></li>
+                        <li><strong>Projektrisikoanalyse</strong></li>
+                        <li><strong>Projekthandbuch</strong></li>
+                    </ul>
+                </div>
+                <div class="warning">
+                    <div class="warning-title">&#9888;&#65039; H&auml;ufige Fehler</div>
+                    <p>Der <strong>Projektabschlussbericht</strong> ist <strong>KEIN</strong> Ergebnis des Projektstartprozesses!</p>
+                    <p>Die <strong>To-Do-Liste</strong> ist ein Instrument der <strong>laufenden Koordination</strong>, nicht des Starts!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SEKTION 4: SYSTEME & PROJEKTERFOLG -->
+        <!-- ============================================ -->
+        <div class="topic-section" id="s4">
+            <h2 class="topic-title"><span class="icon">&#127942;</span> 4. Systeme &amp; Projekterfolg</h2>
+            <p class="topic-intro">Fragen 42&ndash;56 im Quiz</p>
+
+            <div class="card">
+                <h3>Projekte als soziale Systeme</h3>
+                <p>Merkmale eines sozialen Systems:</p>
+                <ul>
+                    <li><strong>Selbstorganisation</strong></li>
+                    <li><strong>Werte und Regeln</strong></li>
+                    <li><strong>Grenzen zur Umwelt</strong></li>
+                    <li><strong>Beziehungen zur Umwelt</strong></li>
+                    <li>Mitglieder &uuml;bernehmen <strong>verschiedene Rollen</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Das soziale System &bdquo;Projekt&ldquo;</h3>
+                <ul>
+                    <li>Wird etabliert <strong>beim Projektstart</strong></li>
+                    <li>Projekte k&ouml;nnen als <strong>soziale</strong> und <strong>wirtschaftliche</strong> Systeme betrachtet werden</li>
+                    <li>Aufgabe aus systemischer Sicht: <strong>Gestaltung der Umweltbeziehungen</strong> und <strong>Grenzkonstruktion</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Projekterfolg</h3>
+                <ul>
+                    <li>Der Projekterfolg ist <strong>relativ</strong> (wird aus verschiedenen Perspektiven beurteilt)</li>
+                    <li>Beitr&auml;ge zum Projekterfolg leisten: <strong>alle Projektbeteiligten</strong> (PM, Team, PAG, Umwelten)</li>
+                </ul>
+                <div class="highlight">
+                    <div class="highlight-title">&#9989; Erfolgskriterien</div>
+                    <ul>
+                        <li><strong>Einhaltung der Projektziele</strong> (Leistung, Termine, Kosten)</li>
+                        <li><strong>Zufriedenheit der Stakeholder</strong></li>
+                        <li><strong>Beitrag zum Unternehmenserfolg</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Erfolgsfaktoren f&uuml;r Projektarbeit</h3>
+                <ul>
+                    <li><strong>Gute Projektplanung</strong></li>
+                    <li><strong>Klare Zieldefinition</strong></li>
+                    <li><strong>Unterst&uuml;tzung durch das Management</strong></li>
+                    <li><strong>Gute Teamarbeit</strong></li>
+                    <li><strong>Adäquates Projektmanagement</strong></li>
+                </ul>
+                <p>Die Projekterfolgskriterien sind <strong>situativ</strong> &ndash; sie h&auml;ngen vom konkreten Projekt ab!</p>
+            </div>
+
+            <div class="card">
+                <h3>PM war erfolgreich, wenn...</h3>
+                <ul>
+                    <li>Die <strong>Projektziele erreicht</strong> wurden</li>
+                    <li>Die <strong>Projektpl&auml;ne eingehalten</strong> wurden</li>
+                    <li>Die <strong>Stakeholder zufrieden</strong> sind</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SEKTION 5: PROJEKTQUALITÄT -->
+        <!-- ============================================ -->
+        <div class="topic-section" id="s5">
+            <h2 class="topic-title"><span class="icon">&#10004;&#65039;</span> 5. Projektqualit&auml;t</h2>
+            <p class="topic-intro">Fragen 56&ndash;62 im Quiz</p>
+
+            <div class="card">
+                <h3>Projektqualit&auml;t</h3>
+                <ul>
+                    <li>Die Projektqualit&auml;t kann <strong>geplant, &uuml;berpr&uuml;ft und gesteuert</strong> werden</li>
+                    <li>In der &bdquo;Empowered&ldquo; PO: <strong>Arbeitspaketverantwortliche</strong> sind f&uuml;r inhaltliche Qualit&auml;t verantwortlich</li>
+                    <li>Bei Kundenauftragsprojekten: Verantwortung liegt beim/bei der <strong>Projektmanager/in</strong></li>
+                    <li>Qualit&auml;t bei Kundenauftragsprojekten ist <strong>mit dem Kunden abzustimmen</strong></li>
+                    <li>Qualit&auml;t der AP-Erf&uuml;llung wird vor allem gepr&uuml;ft: <strong>im Projektcontrolling</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Methoden zur Sicherung der PM-Qualit&auml;t</h3>
+                <ul>
+                    <li><strong>PM-Audits</strong></li>
+                    <li><strong>PM-Benchmarking</strong></li>
+                    <li><strong>PM-Assessments</strong></li>
+                    <li><strong>Lessons Learned</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SEKTION 6: PROJEKTKONTEXT & ABGRENZUNG -->
+        <!-- ============================================ -->
+        <div class="topic-section" id="s6">
+            <h2 class="topic-title"><span class="icon">&#127758;</span> 6. Projektkontext &amp; Abgrenzung</h2>
+            <p class="topic-intro">Fragen 63&ndash;75 im Quiz</p>
+
+            <div class="card">
+                <h3>Projektgrenzen</h3>
+                <p>Projektgrenzen sollen konstruiert werden, weil:</p>
+                <ul>
+                    <li>Sie die <strong>Identit&auml;t</strong> des Projekts definieren</li>
+                    <li>Sie <strong>Klarheit</strong> &uuml;ber Zust&auml;ndigkeiten schaffen</li>
+                    <li>Sie die <strong>Kommunikation</strong> mit der Umwelt strukturieren</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Die 3 Kontextdimensionen</h3>
+                <table>
+                    <tr>
+                        <th>Dimension</th>
+                        <th>Beschreibung</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Sachlicher Kontext</strong></td>
+                        <td>Analyse der sachlichen/inhaltlichen Zusammenh&auml;nge (z.B. Unternehmensstrategien)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sozialer Kontext</strong></td>
+                        <td>Projekte sind <strong>soziale Systeme</strong> &ndash; Beziehungen zu relevanten Umwelten (Personen, Gruppen)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Zeitlicher Kontext</strong></td>
+                        <td>Vor-/Nachprojektphase, Zusammenhang zu anderen Projekten im Zeitverlauf</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>Zeitliche Abgrenzung</h3>
+                <ul>
+                    <li>Erfolgt durch <strong>Definition von Projektstart- und Projektendtermin</strong></li>
+                    <li>Unter dem zeitlichen Projektkontext versteht man: <strong>Vorprojektphase</strong> und <strong>Nachprojektphase</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Vor- und Nachprojektphase</h3>
+                <ul>
+                    <li>Die <strong>Dokumentation der Vorprojektphase</strong> ist wichtig f&uuml;r den Projektstart</li>
+                    <li>In der <strong>Nachprojektphase</strong>: Ergebnissicherung, Lessons Learned, Wartung/Betrieb</li>
+                    <li>Die Zusammenh&auml;nge zu <strong>Unternehmensstrategien</strong> m&uuml;ssen dargestellt werden, weil sie die <strong>Legitimation des Projekts</strong> sichern</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SEKTION 7: PROJEKTUMWELTANALYSE -->
+        <!-- ============================================ -->
+        <div class="topic-section" id="s7">
+            <h2 class="topic-title"><span class="icon">&#128269;</span> 7. Projektumweltanalyse</h2>
+            <p class="topic-intro">Fragen 76&ndash;85 im Quiz</p>
+
+            <div class="card">
+                <h3>Die Projektumweltanalyse-Grafik</h3>
+                <p>Dient zur Darstellung:</p>
+                <ul>
+                    <li>Der <strong>relevanten Umwelten</strong></li>
+                    <li>Der <strong>Beziehungen</strong> zwischen Projekt und Umwelten</li>
+                    <li>Der <strong>Strategien</strong> zur Gestaltung der Umweltbeziehungen</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Die Projektumweltanalyse ist die Basis zur...</h3>
+                <ul>
+                    <li><strong>Gestaltung der Beziehungen</strong> zu den Umwelten</li>
+                    <li><strong>Definition von Projektmarketing-Ma&szlig;nahmen</strong></li>
+                    <li><strong>Identifikation von Risiken</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Arten von Umwelten</h3>
+                <div class="comparison-grid">
+                    <div class="card">
+                        <h3>Soziale Umwelten</h3>
+                        <ul>
+                            <li>Kunden/Auftraggeber</li>
+                            <li>Lieferanten</li>
+                            <li>Beh&ouml;rden</li>
+                            <li>Betroffene Abteilungen</li>
+                            <li>Management</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Projektinterne Umwelten</h3>
+                        <ul>
+                            <li>K&ouml;nnen sich &auml;ndern!</li>
+                            <li>Z.B. Teilteams, Subprojekte</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Ziele der Projektumweltanalyse</h3>
+                <ul>
+                    <li><strong>Erhöhung der Akzeptanz</strong> des Projekts in seinen Umwelten</li>
+                    <li><strong>Identifikation</strong> relevanter Umwelten</li>
+                    <li><strong>Frühzeitige Erkennung</strong> von Chancen und Risiken</li>
+                    <li><strong>Gestaltung</strong> adäquater Kommunikationsstrategien</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Wer arbeitet an der Projektumweltanalyse mit?</h3>
+                <p>Das <strong>gesamte Projektteam</strong> &ndash; idealerweise im Rahmen eines Workshops.</p>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SEKTION 8: BUSINESS CASE -->
+        <!-- ============================================ -->
+        <div class="topic-section" id="s8">
+            <h2 class="topic-title"><span class="icon">&#128176;</span> 8. Business Case</h2>
+            <p class="topic-intro">Fragen 83&ndash;88 im Quiz</p>
+
+            <div class="card">
+                <h3>Business Case-Analyse</h3>
+                <ul>
+                    <li>Dient zur <strong>Entscheidung &uuml;ber die Investition</strong></li>
+                    <li>Der Grund: W<strong>irtschaftliche Rechtfertigung</strong> des Projekts</li>
+                    <li>Betrachtet die <strong>Kosten und Nutzen</strong> &uuml;ber den gesamten Lebenszyklus</li>
+                    <li>Der Zusammenhang zwischen Projekt und Business Case: Das Projekt ist <strong>ein Teil des Business Case</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SEKTION 9: PROJEKTMARKETING -->
+        <!-- ============================================ -->
+        <div class="topic-section" id="s9">
+            <h2 class="topic-title"><span class="icon">&#128227;</span> 9. Projektmarketing</h2>
+            <p class="topic-intro">Fragen 89&ndash;95 im Quiz</p>
+
+            <div class="card">
+                <h3>Projektmarketing</h3>
+                <ul>
+                    <li>Sollte <strong>w&auml;hrend des gesamten Projektablaufs</strong> stattfinden</li>
+                    <li>Sollte <strong>professionell und geplant</strong> durchgef&uuml;hrt werden</li>
+                    <li>Findet statt: <strong>Projektstart, Meilensteine, Projektabschluss, Krisensituationen</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Instrumente des Projektmarketings</h3>
+                <ul>
+                    <li><strong>Projektpräsentationen</strong></li>
+                    <li><strong>Projektbroschüren</strong></li>
+                    <li><strong>Projektwebseite/Intranet</strong></li>
+                    <li><strong>Projektevents</strong></li>
+                    <li><strong>Projektnewsletter</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Ziele des Projektmarketings</h3>
+                <ul>
+                    <li><strong>Akzeptanz</strong> des Projekts in den Umwelten sicherstellen</li>
+                    <li><strong>Unterst&uuml;tzung</strong> durch das Management sichern</li>
+                    <li><strong>Positives Image</strong> des Projekts aufbauen</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SEKTION 10: PROJEKTORGANISATION -->
+        <!-- ============================================ -->
+        <div class="topic-section" id="s10">
+            <h2 class="topic-title"><span class="icon">&#127970;</span> 10. Projektorganisation</h2>
+            <p class="topic-intro">Fragen 96&ndash;110 im Quiz</p>
+
+            <div class="card">
+                <h3>Projektorganisationsformen</h3>
+                <table>
+                    <tr>
+                        <th>Organisationsform</th>
+                        <th>Kennzeichen</th>
+                        <th>Symbol</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Einfluss-PO</strong></td>
+                        <td>PM hat nur koordinierende Funktion, keine Weisungsbefugnis</td>
+                        <td><strong>Dreieck</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Matrix-PO</strong></td>
+                        <td>PM hat fachliche Weisungsbefugnis, MA in Linie und Projekt</td>
+                        <td><strong>Kreis</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reine PO</strong></td>
+                        <td>MA sind vollst&auml;ndig dem Projekt zugeordnet</td>
+                        <td><strong>Viereck</strong></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>Vorteile der Organisationsformen</h3>
+                <div class="comparison-grid">
+                    <div class="card">
+                        <h3>Matrix-PO Vorteile</h3>
+                        <ul>
+                            <li><strong>Flexibler Personaleinsatz</strong></li>
+                            <li>MA beh&auml;lt Kontakt zur Linie</li>
+                            <li>Know-how-Transfer</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Reine PO Vorteile</h3>
+                        <ul>
+                            <li><strong>Klare Zust&auml;ndigkeiten</strong></li>
+                            <li>PM hat volle Weisungsbefugnis</li>
+                            <li>Hohe Identifikation mit dem Projekt</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Thesen zur Projektorganisation</h3>
+                <ul>
+                    <li>Verschiedene Prozesse verlangen <strong>verschiedene Organisationen</strong></li>
+                    <li>Für <strong>komplexe, neuartige Aufgaben</strong> ist das Projekt die geeignete Organisationsform</li>
+                    <li>In der Matrix-PO hat der <strong>PM projektbezogene Weisungsbefugnisse</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SEKTION 11: ROLLEN, TEAMS & FÜHRUNG -->
+        <!-- ============================================ -->
+        <div class="topic-section" id="s11">
+            <h2 class="topic-title"><span class="icon">&#128101;</span> 11. Rollen, Teams &amp; F&uuml;hrung</h2>
+            <p class="topic-intro">Fragen 103&ndash;130 im Quiz</p>
+
+            <div class="card">
+                <h3>Rollen in Projekten</h3>
+                <ul>
+                    <li>Rollen sind <strong>tempor&auml;r</strong> (nur f&uuml;r die Projektdauer)</li>
+                    <li>Werden definiert durch: <strong>Aufgaben, Kompetenzen, Verantwortlichkeiten</strong></li>
+                    <li>Es k&ouml;nnen <strong>Rollenkonflikte</strong> entstehen (z.B. durch Doppelrollen in Linie und Projekt)</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Der/die Projektmanager/in</h3>
+                <ul>
+                    <li>Tr&auml;gt die <strong>Verantwortung f&uuml;r den PM-Prozess</strong></li>
+                    <li><strong>Benennt das Projekt</strong> und <strong>gestaltet die Beziehungen</strong> zu den Umwelten</li>
+                    <li>Aufgaben beim Projektstart: <strong>Planung, Organisation, Teamaufbau</strong></li>
+                    <li>Ben&ouml;tigt zur F&uuml;hrung: <strong>Fachkompetenz, soziale Kompetenz, Methodenkompetenz</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Der/die Projektauftraggeber/in (PAG)</h3>
+                <ul>
+                    <li>Aufgaben beim Projektstart: <strong>Ziele festlegen, Ressourcen bereitstellen, Projektauftrag erteilen</strong></li>
+                    <li>Ist <strong>Bindeglied zwischen Projekt und Unternehmen</strong></li>
+                    <li>Unterzeichnet den <strong>Projektauftrag</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Funktionendiagramm</h3>
+                <ul>
+                    <li>Regelt die <strong>Aufgabenverteilung</strong> zwischen Projektrollen</li>
+                    <li>Zeigt <strong>wer was macht</strong> (D = durchf&uuml;hren, M = mitarbeiten, I = informiert, E = entscheiden)</li>
+                    <li>Sollte beim Projektstart erstellt und im Controlling &uuml;berpr&uuml;ft werden</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Projektteam</h3>
+                <ul>
+                    <li>Zusammensetzung sollte <strong>interdisziplin&auml;r</strong> sein</li>
+                    <li><strong>Redundanz im Projektteam</strong> kann sinnvoll sein (Vertretung)</li>
+                </ul>
+                <div class="highlight">
+                    <div class="highlight-title">&#9989; Phasen der Teamentwicklung (WICHTIG!)</div>
+                    <ol>
+                        <li><strong>Forming</strong> &ndash; Orientierungsphase</li>
+                        <li><strong>Storming</strong> &ndash; Konfliktphase</li>
+                        <li><strong>Norming</strong> &ndash; Regelphase</li>
+                        <li><strong>Performing</strong> &ndash; Leistungsphase</li>
+                        <li><strong>Adjourning</strong> &ndash; Aufl&ouml;sungsphase</li>
+                    </ol>
+                </div>
+                <div class="warning">
+                    <div class="warning-title">&#9888;&#65039; H&auml;ufige Fehler</div>
+                    <p>&bdquo;Organizing&ldquo; und &bdquo;Conforming&ldquo; sind <strong>KEINE</strong> Phasen der Teamentwicklung!</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>F&uuml;hrung</h3>
+                <ul>
+                    <li>F&uuml;hrungsaufgaben: <strong>Motivation, Delegation, Konfliktmanagement, Kommunikation</strong></li>
+                    <li>Die Aufgabe der F&uuml;hrung liegt beim <strong>PM und PAG</strong></li>
+                    <li>PM ben&ouml;tigt: <strong>Fachkompetenz, Sozialkompetenz, Methodenkompetenz, Systemkompetenz</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SEKTION 12: KOMMUNIKATION & PROJEKTKULTUR -->
+        <!-- ============================================ -->
+        <div class="topic-section" id="s12">
+            <h2 class="topic-title"><span class="icon">&#128172;</span> 12. Kommunikation &amp; Projektkultur</h2>
+            <p class="topic-intro">Fragen 128&ndash;145 im Quiz</p>
+
+            <div class="card">
+                <h3>Projektkommunikation</h3>
+                <ul>
+                    <li>Ist ein <strong>wesentlicher Erfolgsfaktor</strong></li>
+                    <li>Kommunikationsstrukturen m&uuml;ssen <strong>geplant</strong> werden</li>
+                    <li>H&auml;ufigkeit der Projektsitzungen richtet sich nach: <strong>Projektphase, Komplexit&auml;t, Bedarf</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>M&uuml;ndliche Kommunikationsformen</h3>
+                <ul>
+                    <li><strong>Projektstart-Workshop</strong></li>
+                    <li><strong>Projektteamsitzungen</strong></li>
+                    <li><strong>Jour-fixes</strong></li>
+                    <li><strong>Projektcontrolling-Sitzungen</strong></li>
+                    <li><strong>Abschluss-Workshops</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Projektstart-Workshop</h3>
+                <ul>
+                    <li>Ziele: <strong>Teambuilding, gemeinsame Projektpl&auml;ne erstellen, Big Project Picture</strong></li>
+                    <li>Die Durchf&uuml;hrung ist <strong>f&uuml;r alle Projekte empfehlenswert</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Projektkultur</h3>
+                <ul>
+                    <li>Projektspezifische <strong>Werte und Regeln</strong> definieren die Projektkultur</li>
+                    <li>Werte: Orientierung f&uuml;r <strong>Verhalten und Zusammenarbeit</strong></li>
+                    <li>Regeln: <strong>konkrete Verhaltensvereinbarungen</strong></li>
+                    <li>Eine spezifische Projektkultur ist <strong>f&uuml;r jedes Projekt sinnvoll</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Hilfsmittel zur Entwicklung einer Projektkultur</h3>
+                <ul>
+                    <li><strong>Slogans</strong> (k&ouml;nnen Identifikation f&ouml;rdern)</li>
+                    <li><strong>Projektname/Logo</strong></li>
+                    <li><strong>Gemeinsame Aktivit&auml;ten</strong></li>
+                    <li><strong>Projektspezifische Werte und Regeln</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SEKTION 13: PROJEKTZIELE -->
+        <!-- ============================================ -->
+        <div class="topic-section" id="s13">
+            <h2 class="topic-title"><span class="icon">&#127919;</span> 13. Projektziele</h2>
+            <p class="topic-intro">Fragen 139&ndash;145 im Quiz</p>
+
+            <div class="card">
+                <h3>Definition von Projektzielen</h3>
+                <ul>
+                    <li>Ist eine der <strong>wichtigsten Aufgaben</strong> im Projektstart</li>
+                    <li>Ziele m&uuml;ssen <strong>klar, messbar, erreichbar, realistisch, terminiert</strong> sein (SMART)</li>
+                    <li>W&auml;hrend des Projektablaufs sollen Ziele <strong>regelm&auml;&szlig;ig &uuml;berpr&uuml;ft</strong> werden</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Nicht-Ziele</h3>
+                <div class="highlight">
+                    <div class="highlight-title">&#9989; Warum Nicht-Ziele definieren?</div>
+                    <ul>
+                        <li><strong>Abgrenzung</strong> des Projektumfangs</li>
+                        <li><strong>Vermeidung von Missverst&auml;ndnissen</strong></li>
+                        <li><strong>Klarheit</strong> &uuml;ber das, was das Projekt NICHT leisten soll</li>
+                        <li>Schutz vor <strong>Scope Creep</strong> (unkontrollierter Umfangserweiterung)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SEKTION 14: STRUKTURPLANUNG -->
+        <!-- ============================================ -->
+        <div class="topic-section" id="s14">
+            <h2 class="topic-title"><span class="icon">&#128202;</span> 14. Strukturplanung (OSP, PSP, Arbeitspakete)</h2>
+            <p class="topic-intro">Fragen 146&ndash;170 im Quiz</p>
+
+            <div class="card">
+                <h3>Objektstrukturplan (OSP)</h3>
+                <ul>
+                    <li>Stellt die <strong>Betrachtungsobjekte</strong> (Ergebnisse/Lieferobjekte) dar</li>
+                    <li>Ist die <strong>Basis f&uuml;r den PSP</strong></li>
+                    <li>Soll die <strong>Leistungen des Projekts strukturieren</strong></li>
+                    <li>Die Erstellung erfolgt <strong>im Projektteam</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Projektstrukturplan (PSP)</h3>
+                <div class="highlight">
+                    <div class="highlight-title">&#9989; Sehr pr&uuml;fungsrelevant!</div>
+                    <ul>
+                        <li>Stellt die <strong>Gesamtheit aller Arbeitspakete</strong> hierarchisch dar</li>
+                        <li>Ist ein <strong>zentrales Planungsinstrument</strong></li>
+                        <li>Ist die <strong>Basis f&uuml;r Termin-, Ressourcen- und Kostenplanung</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Ziele der Projektstrukturplanung</h3>
+                <ul>
+                    <li><strong>Vollst&auml;ndige Erfassung</strong> aller Aufgaben</li>
+                    <li><strong>&Uuml;bersichtliche Darstellung</strong> der Projektstruktur</li>
+                    <li><strong>Zuordnung von Verantwortlichkeiten</strong></li>
+                    <li><strong>Basis f&uuml;r weitere Planung</strong> (Termine, Kosten, Ressourcen)</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Darstellungsformen des PSP</h3>
+                <ul>
+                    <li><strong>Baumstruktur</strong> (grafisch)</li>
+                    <li><strong>Textstruktur</strong> (tabellarisch/Listenform)</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Warum ist ein guter PSP wichtig?</h3>
+                <ul>
+                    <li>Er ist die <strong>Grundlage f&uuml;r alle weiteren Planungsschritte</strong></li>
+                    <li>Er stellt sicher, dass <strong>nichts vergessen</strong> wird</li>
+                    <li>Controlling des PSP dient der <strong>&Uuml;berpr&uuml;fung der Vollst&auml;ndigkeit</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Arbeitspakete (AP)</h3>
+                <ul>
+                    <li>Sind die <strong>kleinsten Einheiten im PSP</strong></li>
+                    <li>Jedes AP hat einen <strong>Verantwortlichen</strong></li>
+                    <li>AP-Spezifikationen enthalten: <strong>Inhalt, Verantwortlicher, Aufwand, Termine, Ergebnisse</strong></li>
+                </ul>
+                <div class="info">
+                    <div class="info-title">&#128221; Jede AP-Beschreibung sollte mindestens enthalten:</div>
+                    <ul>
+                        <li>AP-Name und -Nummer</li>
+                        <li>Verantwortliche/r</li>
+                        <li>Inhalt/Beschreibung</li>
+                        <li>Ergebnis/Lieferobjekt</li>
+                        <li>Aufwand und Dauer</li>
+                        <li>Start- und Endtermin</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Projektphasen</h3>
+                <ul>
+                    <li>Sind <strong>zeitliche Abschnitte</strong> des Projekts</li>
+                    <li>Haben den Charakter von: <strong>Zusammenfassungen von Arbeitspaketen</strong></li>
+                    <li>Das Strukturieren in Phasen f&ouml;rdert: <strong>&Uuml;bersichtlichkeit und Steuerbarkeit</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SEKTION 15: TERMINPLANUNG -->
+        <!-- ============================================ -->
+        <div class="topic-section" id="s15">
+            <h2 class="topic-title"><span class="icon">&#128197;</span> 15. Terminplanung</h2>
+            <p class="topic-intro">Fragen 172&ndash;195 im Quiz</p>
+
+            <div class="card">
+                <h3>&Uuml;bersicht: 3 Methoden der Terminplanung</h3>
+                <table>
+                    <tr>
+                        <th>Methode</th>
+                        <th>Komplexit&auml;t</th>
+                        <th>Informationen</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Meilensteinplan</strong></td>
+                        <td>Einfach (Bereich A)</td>
+                        <td>Wichtige Zeitpunkte/Ereignisse</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Balkenplan (Gantt)</strong></td>
+                        <td>Mittel (Bereich B)</td>
+                        <td>AP mit Dauer und Zeitraum</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Netzplan</strong></td>
+                        <td>Hoch (Bereich C)</td>
+                        <td>AP mit Abh&auml;ngigkeiten, kritischer Weg</td>
+                    </tr>
+                </table>
+                <div class="tip">
+                    <div class="tip-title">&#128161; Tipp</div>
+                    <p>Die Methoden sollen <strong>situativ angewendet</strong> werden &ndash; je nach Projektkomplexit&auml;t!</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Meilensteinplan</h3>
+                <ul>
+                    <li>Soll eine <strong>&uuml;berschaubare Anzahl</strong> von Meilensteinen haben (<strong>5&ndash;15</strong>)</li>
+                    <li><strong>Muss enthalten</strong>: Projektstart und Projektende</li>
+                    <li>Meilensteine = <strong>wichtige Ereignisse/Entscheidungspunkte</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Terminliste</h3>
+                <ul>
+                    <li>Ist eine <strong>einfache</strong> Form der Terminplanung</li>
+                    <li>Ben&ouml;tigt: <strong>Arbeitspakete und zugeordnete Termine</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Balkenplan</h3>
+                <ul>
+                    <li>Ist ein <strong>grafisches Planungsinstrument</strong></li>
+                    <li>Zeigt AP als <strong>Balken auf einer Zeitachse</strong></li>
+                    <li>Ben&ouml;tigt: <strong>Arbeitspakete, Dauern, Start-/Endtermine</strong></li>
+                    <li>Aus dem vernetzten Balkenplan: <strong>Abh&auml;ngigkeiten und kritischer Weg</strong> ersichtlich</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Netzplan</h3>
+                <ul>
+                    <li>Ist das <strong>komplexeste Planungsinstrument</strong></li>
+                    <li>Ben&ouml;tigt: <strong>Arbeitspakete, Dauern, technologische Abh&auml;ngigkeiten</strong></li>
+                    <li>Zeigt den <strong>kritischen Weg</strong> (l&auml;ngster Pfad ohne Puffer)</li>
+                </ul>
+                <div class="highlight">
+                    <div class="highlight-title">&#9989; Netzplan-Begriffe</div>
+                    <ul>
+                        <li><strong>FA</strong> = Fr&uuml;hester Anfang</li>
+                        <li><strong>FE</strong> = Fr&uuml;hestes Ende</li>
+                        <li><strong>SA</strong> = Sp&auml;tester Anfang</li>
+                        <li><strong>SE</strong> = Sp&auml;testes Ende</li>
+                        <li><strong>GP</strong> = Gesamtpuffer (SA - FA)</li>
+                        <li><strong>FP</strong> = Freier Puffer</li>
+                        <li><strong>Kritischer Weg</strong> = Pfad mit GP = 0</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Wichtig zur Terminsch&auml;tzung</h3>
+                <ul>
+                    <li>Arbeitspaketdauern sind <strong>Sch&auml;tzungen</strong></li>
+                    <li>AP m&uuml;ssen <strong>so weit zerlegt werden, bis sie sch&auml;tzbar</strong> sind</li>
+                    <li>Wenn nur AP, Dauern und Abh&auml;ngigkeiten bekannt sind (ohne Starttermin): <strong>Netzplan</strong> kann erstellt werden</li>
+                    <li>Wenn AP, Dauern und Termine bekannt: <strong>Terminliste und Balkenplan</strong> k&ouml;nnen erstellt werden</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SEKTION 16: RESSOURCEN, KOSTEN & FINANZ -->
+        <!-- ============================================ -->
+        <div class="topic-section" id="s16">
+            <h2 class="topic-title"><span class="icon">&#128178;</span> 16. Ressourcen-, Kosten- &amp; Finanzplanung</h2>
+            <p class="topic-intro">Fragen 191&ndash;220 im Quiz</p>
+
+            <h3 class="topic-subtitle">Ressourcenplanung</h3>
+
+            <div class="card">
+                <h3>Projektressourcen</h3>
+                <ul>
+                    <li>Umfassen: <strong>Personal, Material, Maschinen, R&auml;ume, IT</strong></li>
+                    <li>Knappe Ressourcen sind <strong>ein h&auml;ufiges Projektrisiko</strong></li>
+                    <li>Ressourcenplanung muss <strong>fr&uuml;hzeitig</strong> erfolgen</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Schritte der Ressourcenplanung</h3>
+                <ol>
+                    <li><strong>Ressourcenbedarf ermitteln</strong> (aus AP-Spezifikationen)</li>
+                    <li><strong>Ressourcenverf&uuml;gbarkeit pr&uuml;fen</strong></li>
+                    <li><strong>Ressourcenzuordnung</strong> vornehmen</li>
+                    <li><strong>Ressourcen&uuml;berpr&uuml;fung</strong> und Optimierung</li>
+                </ol>
+            </div>
+
+            <h3 class="topic-subtitle">Kostenplanung</h3>
+
+            <div class="card">
+                <h3>Projektkosten</h3>
+                <ul>
+                    <li>Umfassen: <strong>Personalkosten, Materialkosten, externe Leistungen, Gemeinkosten</strong></li>
+                    <li>Planung erfordert: <strong>PSP, AP-Spezifikationen, Ressourcenplan</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Projektkostenplan</h3>
+                <ul>
+                    <li>Zeigt die <strong>geplanten Kosten pro AP und Phase</strong></li>
+                    <li>Kann als <strong>Histogramm</strong> dargestellt werden (Kosten &uuml;ber Zeit)</li>
+                    <li>Summierung nach Verantwortungsbereichen ergibt: <strong>Kostenstellen-Zuordnung</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Ziele der Kostenplanung</h3>
+                <ul>
+                    <li><strong>Budgetierung</strong> des Projekts</li>
+                    <li><strong>Kostencontrolling</strong> erm&ouml;glichen</li>
+                    <li><strong>Wirtschaftlichkeit</strong> sicherstellen</li>
+                </ul>
+            </div>
+
+            <h3 class="topic-subtitle">Finanzplanung</h3>
+
+            <div class="card">
+                <h3>Projektfinanzplan</h3>
+                <ul>
+                    <li>Zeigt den <strong>zeitlichen Anfall von Ein- und Auszahlungen</strong></li>
+                    <li>Ist die <strong>Basis f&uuml;r die Liquidit&auml;tsplanung</strong></li>
+                    <li>Voraussetzung: <strong>Kostenplan und Terminplan</strong> m&uuml;ssen vorhanden sein</li>
+                </ul>
+                <div class="info">
+                    <div class="info-title">&#128221; Wichtige Begriffe</div>
+                    <ul>
+                        <li><strong>Kalkulatorische Ertr&auml;ge</strong>: z.B. Erl&ouml;se aus dem Projektergebnis</li>
+                        <li><strong>Kalkulatorische Kosten</strong>: z.B. Personalkosten, Materialkosten</li>
+                        <li><strong>Einzahlungs&uuml;bersch&uuml;sse</strong>: Differenz Einzahlungen - Auszahlungen</li>
+                        <li><strong>Finanzmittelbedarf</strong>: Ben&ouml;tigte Liquidit&auml;t &uuml;ber die Projektlaufzeit</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SEKTION 17: RISIKO & DOKUMENTATION -->
+        <!-- ============================================ -->
+        <div class="topic-section" id="s17">
+            <h2 class="topic-title"><span class="icon">&#9888;&#65039;</span> 17. Risikomanagement &amp; Dokumentation</h2>
+            <p class="topic-intro">Fragen 222&ndash;236 im Quiz</p>
+
+            <div class="card">
+                <h3>Projektrisikomanagement</h3>
+                <ul>
+                    <li>Basiert auf der <strong>Projektrisikoanalyse</strong></li>
+                    <li>Wird wahrgenommen durch: <strong>PM, Projektteam, PAG</strong></li>
+                    <li>Risikoanalyse soll <strong>im Projektstart und im Controlling</strong> erstellt/aktualisiert werden</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Projektdokumentation</h3>
+                <ul>
+                    <li>Dient zur <strong>Nachvollziehbarkeit</strong></li>
+                    <li>Dient zur <strong>Wissenssicherung</strong></li>
+                    <li>Das projektbezogene <strong>Ablagesystem</strong> muss strukturiert und allen zug&auml;nglich sein</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Laufende Projektkoordination</h3>
+                <ul>
+                    <li><strong>To-Do-Liste</strong> als Hilfsmittel</li>
+                    <li><strong>Besprechungsprotokolle</strong> sind essenziell</li>
+                    <li>Protokolle sollten erstellt werden vom: <strong>PM oder einem Teammitglied</strong></li>
+                    <li>Protokolle sollten <strong>zeitnah verteilt</strong> werden</li>
+                    <li>Protokolle dienen: <strong>Nachvollziehbarkeit, Verbindlichkeit, Information</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Protokoll einer Koordinationssitzung sollte enthalten:</h3>
+                <ul>
+                    <li><strong>Datum und Teilnehmer</strong></li>
+                    <li><strong>Besprochene Themen</strong></li>
+                    <li><strong>Getroffene Entscheidungen</strong></li>
+                    <li><strong>Vereinbarte Ma&szlig;nahmen</strong> mit Verantwortlichen und Terminen</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SEKTION 18: CHANGE MANAGEMENT -->
+        <!-- ============================================ -->
+        <div class="topic-section" id="s18">
+            <h2 class="topic-title"><span class="icon">&#128260;</span> 18. Change Management im Projekt</h2>
+            <p class="topic-intro">Fragen 237&ndash;248 im Quiz</p>
+
+            <div class="card">
+                <h3>Change im Projekt</h3>
+                <ul>
+                    <li>Muss in <strong>allen Projektpl&auml;nen</strong> ber&uuml;cksichtigt werden</li>
+                    <li>Kann veranlasst werden durch: <strong>Umweltver&auml;nderungen, neue Anforderungen, Probleme</strong></li>
+                    <li>Wird gemanaged von: <strong>PM, PAG, Projektteam</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>First Order Change vs. Second Order Change</h3>
+                <div class="comparison-grid">
+                    <div class="card" style="border-color: #22c55e;">
+                        <h3 style="color: #86efac;">First Order Change</h3>
+                        <ul>
+                            <li><strong>Kleine &Auml;nderungen</strong></li>
+                            <li>Innerhalb der bestehenden Projektstruktur</li>
+                            <li>Wird im <strong>Projektkoordinationsprozess</strong> gemanaged</li>
+                            <li>Z.B. Terminverschiebung eines AP</li>
+                        </ul>
+                    </div>
+                    <div class="card" style="border-color: #ef4444;">
+                        <h3 style="color: #fca5a5;">Second Order Change</h3>
+                        <ul>
+                            <li><strong>Fundamentale &Auml;nderungen</strong></li>
+                            <li>&Auml;ndert die Projektstruktur selbst</li>
+                            <li>Wird im <strong>Projektcontrollingprozess</strong> gemanaged</li>
+                            <li>Z.B. &Auml;nderung der Projektziele</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tip">
+                    <div class="tip-title">&#128161; Merkhilfe</div>
+                    <p><strong>First Order</strong> = kleine Anpassung im laufenden Betrieb (Koordination)</p>
+                    <p><strong>Second Order</strong> = grundlegende &Auml;nderung &rarr; braucht Controlling/Entscheidung auf h&ouml;herer Ebene</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SEKTION 19: PROJEKTCONTROLLING -->
+        <!-- ============================================ -->
+        <div class="topic-section" id="s19">
+            <h2 class="topic-title"><span class="icon">&#128200;</span> 19. Projektcontrolling</h2>
+            <p class="topic-intro">Fragen 249&ndash;275 im Quiz</p>
+
+            <div class="card">
+                <h3>Betrachtungsobjekte des Projektcontrollings</h3>
+                <ul>
+                    <li><strong>Projektziele</strong></li>
+                    <li><strong>Projektleistungen</strong> (Fortschritt)</li>
+                    <li><strong>Projekttermine</strong></li>
+                    <li><strong>Projektkosten</strong></li>
+                    <li><strong>Projektressourcen</strong></li>
+                    <li><strong>Projektrisiken</strong></li>
+                    <li><strong>Projektkontext</strong> (Umweltbeziehungen)</li>
+                    <li><strong>Projektorganisation</strong></li>
+                    <li><strong>Projektkultur</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Warum ist Projektcontrolling wichtig?</h3>
+                <ul>
+                    <li><strong>Fr&uuml;hzeitige Erkennung</strong> von Abweichungen</li>
+                    <li><strong>Steuerungsma&szlig;nahmen</strong> k&ouml;nnen rechtzeitig eingeleitet werden</li>
+                    <li>Sicherung des <strong>Projekterfolgs</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Projektcontrolling-Methoden</h3>
+                <ul>
+                    <li><strong>Soll-Ist-Vergleich</strong> (wichtigste Methode!)</li>
+                    <li><strong>Earned Value Analyse</strong></li>
+                    <li><strong>Project Score Card</strong></li>
+                    <li><strong>Meilenstein-Trend-Analyse</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Soll-Ist Vergleich</h3>
+                <ul>
+                    <li>Vergleicht <strong>geplante Werte</strong> (Soll) mit <strong>tats&auml;chlichen Werten</strong> (Ist)</li>
+                    <li>Kann durchgef&uuml;hrt werden f&uuml;r: <strong>Termine, Kosten, Leistungen</strong></li>
+                    <li>Ist Voraussetzung, um <strong>Steuerungsma&szlig;nahmen</strong> einzuleiten</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Weitere Controlling-Aspekte</h3>
+                <ul>
+                    <li><strong>Projektfortschrittsberichte</strong>: regelm&auml;&szlig;ige Statusberichte</li>
+                    <li><strong>Project Score Card</strong>: betrachtet mehrere Dimensionen (Termin, Kosten, Qualit&auml;t, Risiken)</li>
+                    <li><strong>Projektkostencontrolling</strong>: Vergleich Plan- vs. Istkosten</li>
+                    <li><strong>Projekttermincontrolling</strong> mit Netzpl&auml;nen: Aktualisierung des kritischen Wegs</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Wer stimmt Ziele im Controlling ab?</h3>
+                <p>Der <strong>Projektauftraggeber</strong> stimmt bei Bedarf die Projektziele mit dem <strong>Management/Lenkungsausschuss</strong> ab.</p>
+            </div>
+
+            <div class="card">
+                <h3>Projektcontroller</h3>
+                <ul>
+                    <li>Unterst&uuml;tzt den PM bei der <strong>Durchf&uuml;hrung des Controllings</strong></li>
+                    <li>Ist <strong>NICHT der PM selbst</strong> (kann aber die gleiche Person sein)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SEKTION 20: EARNED VALUE ANALYSE -->
+        <!-- ============================================ -->
+        <div class="topic-section" id="s20">
+            <h2 class="topic-title"><span class="icon">&#128200;</span> 20. Earned Value Analyse (EVA)</h2>
+            <p class="topic-intro">Fragen 251&ndash;260 im Quiz</p>
+
+            <div class="card">
+                <h3>Was ist die Earned Value Analyse?</h3>
+                <p>Ein <strong>integriertes Verfahren</strong> zur Messung des Projektfortschritts, das <strong>Leistung, Termine und Kosten</strong> gemeinsam betrachtet.</p>
+            </div>
+
+            <div class="card">
+                <h3>Die 3 Grundgr&ouml;&szlig;en der EVA</h3>
+                <div class="highlight">
+                    <div class="highlight-title">&#9989; WICHTIG &ndash; unbedingt merken!</div>
+                    <table>
+                        <tr>
+                            <th>K&uuml;rzel</th>
+                            <th>Deutsch</th>
+                            <th>Englisch</th>
+                            <th>Bedeutung</th>
+                        </tr>
+                        <tr>
+                            <td><strong>PV</strong></td>
+                            <td>Planwert</td>
+                            <td>Planned Value</td>
+                            <td>Geplante Kosten f&uuml;r geplante Arbeit</td>
+                        </tr>
+                        <tr>
+                            <td><strong>EV</strong></td>
+                            <td>Fertigstellungswert</td>
+                            <td>Earned Value</td>
+                            <td>Geplante Kosten f&uuml;r tats&auml;chlich erbrachte Arbeit</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AC</strong></td>
+                            <td>Ist-Kosten</td>
+                            <td>Actual Cost</td>
+                            <td>Tats&auml;chliche Kosten f&uuml;r erbrachte Arbeit</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Abweichungen in der EVA</h3>
+                <table>
+                    <tr>
+                        <th>Abweichung</th>
+                        <th>Formel</th>
+                        <th>Bedeutung</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Kostenabweichung (CV)</strong></td>
+                        <td>EV &minus; AC</td>
+                        <td>Positiv = unter Budget</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Terminabweichung (SV)</strong></td>
+                        <td>EV &minus; PV</td>
+                        <td>Positiv = vor dem Zeitplan</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CPI</strong></td>
+                        <td>EV / AC</td>
+                        <td>&gt;1 = kosteneffizient</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SPI</strong></td>
+                        <td>EV / PV</td>
+                        <td>&gt;1 = schneller als geplant</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>Ziele &amp; Nutzen der EVA</h3>
+                <ul>
+                    <li>Beurteilung, ob das Projekt <strong>im Zeit- und Kostenrahmen</strong> liegt</li>
+                    <li><strong>Prognose</strong> der Gesamtkosten und Endtermin</li>
+                    <li><strong>Fr&uuml;hzeitige Warnung</strong> bei Abweichungen</li>
+                    <li>Integrierte Sicht auf <strong>Leistung, Kosten und Termine</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SEKTION 21: PROJEKTABSCHLUSS -->
+        <!-- ============================================ -->
+        <div class="topic-section" id="s21">
+            <h2 class="topic-title"><span class="icon">&#127937;</span> 21. Projektabschlussprozess</h2>
+            <p class="topic-intro">Fragen 276&ndash;295 im Quiz</p>
+
+            <div class="card">
+                <h3>Im Projektabschlussprozess</h3>
+                <ul>
+                    <li><strong>Abnahme der Projektergebnisse</strong></li>
+                    <li><strong>Emotionaler Abschluss</strong> f&uuml;r das Team</li>
+                    <li><strong>Wissenssicherung</strong> (Lessons Learned)</li>
+                    <li><strong>Aufl&ouml;sung der Projektorganisation</strong></li>
+                    <li>Planung der <strong>Nachprojektphase</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Aufgaben des PAG beim Projektabschluss</h3>
+                <ul>
+                    <li><strong>Abnahme der Projektergebnisse</strong></li>
+                    <li><strong>Genehmigung des Projektabschlussberichts</strong></li>
+                    <li><strong>Freigabe der Projektressourcen</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Projektabschluss-Workshop</h3>
+                <ul>
+                    <li>Dient der <strong>gemeinsamen Reflexion</strong></li>
+                    <li><strong>Lessons Learned</strong></li>
+                    <li><strong>Emotionaler Abschluss</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Beurteilung</h3>
+                <ul>
+                    <li>Die Beurteilung des <strong>Projekts</strong> erfolgt anhand der <strong>Projektziele und -pl&auml;ne</strong></li>
+                    <li>Die Beurteilung des <strong>Projektteams</strong> dient der <strong>Personalentwicklung</strong> und <strong>Verbesserung</strong></li>
+                    <li>Instrumente: <strong>Feedbackgespr&auml;che, Frageb&ouml;gen, Teamreflexion</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Ergebnisse des Projektabschlussprozesses</h3>
+                <div class="highlight">
+                    <div class="highlight-title">&#9989; Dokumente des Projektabschlusses</div>
+                    <ul>
+                        <li><strong>Projektabschlussbericht</strong></li>
+                        <li><strong>Abgenommene Projektergebnisse</strong></li>
+                        <li><strong>Lessons Learned</strong></li>
+                        <li><strong>Aktualisiertes Projekthandbuch</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Der Projektabschlussbericht</h3>
+                <ul>
+                    <li>Beinhaltet: <strong>Soll-Ist-Vergleich, Lessons Learned, Empfehlungen</strong></li>
+                    <li>Wird erstellt vom <strong>PM/Projektteam</strong></li>
+                    <li>Wird genehmigt vom <strong>PAG</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SEKTION 22: DISKONTINUITÄT & KRISENMANAGEMENT -->
+        <!-- ============================================ -->
+        <div class="topic-section" id="s22">
+            <h2 class="topic-title"><span class="icon">&#9889;</span> 22. Projektdiskontinuit&auml;t &amp; Krisenmanagement</h2>
+            <p class="topic-intro">Fragen 296&ndash;315 im Quiz</p>
+
+            <div class="card">
+                <h3>Projektdiskontinuit&auml;t</h3>
+                <ul>
+                    <li>Bedeutet: <strong>unerwartete, wesentliche &Auml;nderungen</strong> im Projektverlauf</li>
+                    <li>Kann eine <strong>Chance</strong> oder <strong>Krise</strong> sein</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Projektkrise</h3>
+                <ul>
+                    <li>Ist eine <strong>besonders kritische Diskontinuit&auml;t</strong></li>
+                    <li>Kann das <strong>gesamte Projekt gef&auml;hrden</strong></li>
+                    <li><strong>&bdquo;Schwache Signale&ldquo;</strong> k&ouml;nnen Krisen fr&uuml;hzeitig anzeigen</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Instrumente zur Erkennung schwacher Signale</h3>
+                <ul>
+                    <li><strong>Regelm&auml;&szlig;iges Controlling</strong></li>
+                    <li><strong>Risikomanagement</strong></li>
+                    <li><strong>Offene Kommunikationskultur</strong></li>
+                    <li><strong>Umweltanalyse</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Szenariotechnik</h3>
+                <ul>
+                    <li>Dient zur <strong>Entwicklung alternativer Zukunftsszenarien</strong></li>
+                    <li>Wird verwendet, wenn <strong>hohe Unsicherheit herrscht</strong></li>
+                    <li>Sollte im <strong>Team</strong> durchgef&uuml;hrt werden</li>
+                    <li>F&ouml;rdert <strong>kreatives Denken</strong> und <strong>Vorbereitung auf verschiedene Eventualit&auml;ten</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Ursachenanalyse</h3>
+                <ul>
+                    <li>Wird bei <strong>Bew&auml;ltigung einer Diskontinuit&auml;t</strong> durchgef&uuml;hrt</li>
+                    <li>Zust&auml;ndig: <strong>PM und Projektteam</strong></li>
+                    <li>Dient zur <strong>Identifikation der tieferliegenden Ursachen</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Prozess der Bew&auml;ltigung</h3>
+                <ol>
+                    <li><strong>Erkennung</strong> der Diskontinuit&auml;t</li>
+                    <li><strong>Ursachenanalyse</strong></li>
+                    <li><strong>Ma&szlig;nahmenentwicklung</strong></li>
+                    <li><strong>Entscheidung</strong> &uuml;ber Ma&szlig;nahmen</li>
+                    <li><strong>Umsetzung</strong></li>
+                    <li><strong>Nachverfolgung</strong></li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SEKTION 23: PROGRAMME -->
+        <!-- ============================================ -->
+        <div class="topic-section" id="s23">
+            <h2 class="topic-title"><span class="icon">&#128230;</span> 23. Programme &amp; Programmmanagement</h2>
+            <p class="topic-intro">Fragen 316&ndash;345 im Quiz</p>
+
+            <div class="card">
+                <h3>Was ist ein Programm?</h3>
+                <ul>
+                    <li>Programme sind im Vergleich zu Projekten <strong>gr&ouml;&szlig;er, komplexer, l&auml;nger</strong></li>
+                    <li>Ein Programm ist eine <strong>Gruppe zusammengeh&ouml;riger Projekte</strong></li>
+                    <li>Erm&ouml;glicht <strong>Synergien zwischen Projekten</strong></li>
+                    <li>Kann als <strong>tempor&auml;re Organisation</strong> betrachtet werden</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Kopplung der Projekte im Programm</h3>
+                <ul>
+                    <li>Erfolgt &uuml;ber: <strong>gemeinsame Ziele, gemeinsame Ressourcen, inhaltliche Abh&auml;ngigkeiten</strong></li>
+                    <li>Gemeinsame <strong>Programmorganisation</strong></li>
+                    <li>Gemeinsames <strong>Programmcontrolling</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Programmrollen</h3>
+                <ul>
+                    <li><strong>Programmmanager/in</strong></li>
+                    <li><strong>Programmauftraggeber</strong></li>
+                    <li><strong>Projektmanager/innen</strong> der einzelnen Projekte</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Programmstart</h3>
+                <ul>
+                    <li>Definition der <strong>Programmziele</strong></li>
+                    <li>Etablierung der <strong>Programmorganisation</strong></li>
+                    <li>Beauftragung der <strong>einzelnen Projekte</strong></li>
+                    <li>Erstellung der <strong>Programmpläne</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Programmcontrolling</h3>
+                <ul>
+                    <li>Betrachtungsobjekte: <strong>Programmfortschritt, Projektstatusse, Synergien, Risiken</strong></li>
+                    <li>Methoden: <strong>Programmfortschrittsbericht, Programm-Scorecard</strong></li>
+                    <li>Teilnehmer: <strong>Programmmanager, Projektmanager, PAG</strong></li>
+                    <li>Programmfortschrittsbericht: <strong>Status aller Projekte, Programmstatus, Risiken</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SEKTION 24: PROJEKTBEAUFTRAGUNG -->
+        <!-- ============================================ -->
+        <div class="topic-section" id="s24">
+            <h2 class="topic-title"><span class="icon">&#128196;</span> 24. Projektbeauftragung &amp; Projektauftrag</h2>
+            <p class="topic-intro">Fragen 346&ndash;365 im Quiz</p>
+
+            <div class="card">
+                <h3>Der Projektbeauftragungsprozess</h3>
+                <ul>
+                    <li>Formaler Prozess der <strong>Projektfreigabe</strong></li>
+                    <li>Mitwirkende: <strong>PAG, PM, ggf. Lenkungsausschuss</strong></li>
+                    <li>PAG-Aufgabe: <strong>Entscheidung &uuml;ber Projektdurchf&uuml;hrung, Ressourcenbereitstellung</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Der Projektauftrag</h3>
+                <div class="highlight">
+                    <div class="highlight-title">&#9989; Bestandteile eines schriftlichen Projektauftrags</div>
+                    <ul>
+                        <li><strong>Projektziele</strong></li>
+                        <li><strong>Projektleistungen</strong></li>
+                        <li><strong>Projekttermine</strong> (Start &amp; Ende)</li>
+                        <li><strong>Projektbudget</strong></li>
+                        <li><strong>Projektorganisation</strong> (PM, PAG)</li>
+                        <li><strong>Projektressourcen</strong></li>
+                        <li><strong>Unterschrift</strong> von PAG und PM</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Der unterschriebene Projektauftrag</h3>
+                <ul>
+                    <li>Schafft <strong>Verbindlichkeit</strong></li>
+                    <li>Muss unterschrieben werden von: <strong>PAG und PM</strong></li>
+                    <li>Bei Unterschrift muss bereits Personal f&uuml;r <strong>PM und PAG</strong> ausgew&auml;hlt sein</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SEKTION 25: AUDIT -->
+        <!-- ============================================ -->
+        <div class="topic-section" id="s25">
+            <h2 class="topic-title"><span class="icon">&#128270;</span> 25. Investitionsevaluierung &amp; Management-Audit</h2>
+            <p class="topic-intro">Fragen 366&ndash;385 im Quiz</p>
+
+            <div class="card">
+                <h3>Investitionsevaluierung</h3>
+                <ul>
+                    <li>Dient zur <strong>Bewertung der Investition</strong></li>
+                    <li>Zust&auml;ndig: <strong>Management, PAG, Controlling</strong></li>
+                    <li>Ergebnis kann sein: <strong>Go/No-Go Entscheidung, Priorisierung</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Management-Audit eines Projekts</h3>
+                <ul>
+                    <li>Ist eine <strong>systematische &Uuml;berpr&uuml;fung</strong> des Projektmanagements</li>
+                    <li>Geeignet f&uuml;r: <strong>gr&ouml;&szlig;ere, komplexe Projekte</strong></li>
+                    <li>Wird auch bezeichnet als: <strong>Projekt-Review, Projektassessment</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Ziele des Management-Audits</h3>
+                <ul>
+                    <li><strong>Verbesserung des PM</strong></li>
+                    <li><strong>Risikominimierung</strong></li>
+                    <li><strong>Qualit&auml;tssicherung</strong></li>
+                    <li>Betrachtungsobjekte: <strong>PM-Prozess, Projektpl&auml;ne, Projektorganisation, Resultate</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Zeitpunkte f&uuml;r ein Audit</h3>
+                <ul>
+                    <li><strong>Nach dem Projektstart</strong></li>
+                    <li><strong>An wichtigen Meilensteinen</strong></li>
+                    <li><strong>Bei Krisen</strong></li>
+                    <li><strong>Vor dem Projektabschluss</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SEKTION 26: PROJEKTPORTFOLIO -->
+        <!-- ============================================ -->
+        <div class="topic-section" id="s26">
+            <h2 class="topic-title"><span class="icon">&#128188;</span> 26. Projektportfolio</h2>
+            <p class="topic-intro">Fragen 385&ndash;404 im Quiz</p>
+
+            <div class="card">
+                <h3>Was ist ein Projektportfolio?</h3>
+                <ul>
+                    <li>Die <strong>Gesamtheit aller Projekte</strong> einer Organisation</li>
+                    <li>Kann nach verschiedenen Kriterien <strong>kategorisiert und priorisiert</strong> werden</li>
+                    <li>Bildet die Basis f&uuml;r <strong>strategische Entscheidungen</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Ziele der Projektportfolio-Koordination</h3>
+                <ul>
+                    <li><strong>Optimale Ressourcenallokation</strong> &uuml;ber alle Projekte</li>
+                    <li><strong>Strategische Ausrichtung</strong> der Projekte</li>
+                    <li><strong>Priorisierung</strong> bei Ressourcenkonflikten</li>
+                    <li><strong>&Uuml;berblick</strong> &uuml;ber alle laufenden Projekte</li>
+                    <li><strong>Synergien</strong> zwischen Projekten nutzen</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Rollen in der Portfolio-Koordination</h3>
+                <ul>
+                    <li><strong>Projektportfolio-Gruppe</strong> (strategische Entscheidungen)</li>
+                    <li><strong>PM-Office</strong> (operative Unterst&uuml;tzung)</li>
+                    <li><strong>Projektmanager/innen</strong> (liefern Informationen)</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Projektportfolio-Datenbank</h3>
+                <ul>
+                    <li>Enth&auml;lt <strong>Stammdaten aller Projekte</strong></li>
+                    <li>Soll enthalten: <strong>Projektstatus, Termine, Kosten, Ressourcen, Risiken</strong></li>
+                    <li><strong>Portfolioberichte</strong> werden daraus generiert</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Projekte-Netzwerk</h3>
+                <ul>
+                    <li>Beziehungen zwischen Projekten bestehen, wenn: <strong>gemeinsame Ressourcen, gegenseitige Abh&auml;ngigkeiten, gemeinsame Ziele</strong></li>
+                    <li>Ziel: <strong>Synergien nutzen, Konflikte vermeiden, Transparenz schaffen</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SEKTION 27: POU -->
+        <!-- ============================================ -->
+        <div class="topic-section" id="s27">
+            <h2 class="topic-title"><span class="icon">&#127963;&#65039;</span> 27. Projektorientiertes Unternehmen (POU)</h2>
+            <p class="topic-intro">Fragen 404&ndash;424 im Quiz</p>
+
+            <div class="card">
+                <h3>Was ist ein POU?</h3>
+                <ul>
+                    <li>Ein Unternehmen, das <strong>Management by Projects</strong> als Strategie einsetzt</li>
+                    <li>Zeichnet sich aus durch: <strong>viele parallele Projekte, PM-Kompetenz, PM-Kultur</strong></li>
+                    <li>Hat <strong>dynamische Organisationsgrenzen</strong> (durch st&auml;ndig wechselnde Projekte)</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Management by Projects</h3>
+                <ul>
+                    <li>Ist eine <strong>Organisationsstrategie</strong></li>
+                    <li>Ziele: <strong>Flexibilit&auml;t, Dezentralisierung, Qualit&auml;tsicherung, organisationales Lernen</strong></li>
+                    <li>Verschiedene Geschäftsprozesse werden in <strong>verschiedenen Organisationsformen</strong> durchgef&uuml;hrt (Routine = Linie, Einmalig/komplex = Projekt)</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Das neue Management-Paradigma</h3>
+                <ul>
+                    <li>Gekennzeichnet durch: <strong>Dezentralisierung, Empowerment, Projektorientierung</strong></li>
+                    <li><strong>Flache Hierarchien</strong></li>
+                    <li><strong>Teamarbeit</strong></li>
+                    <li><strong>Prozessorientierung</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Spezifische Gesch&auml;ftsprozesse des POU</h3>
+                <ul>
+                    <li><strong>Projektbeauftragung</strong></li>
+                    <li><strong>Projektportfolio-Koordination</strong></li>
+                    <li><strong>Personalmanagement f&uuml;r Projekte</strong></li>
+                    <li><strong>PM-Qualit&auml;tssicherung</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Integrationsstrukturen des POU</h3>
+                <ul>
+                    <li><strong>PM-Office</strong></li>
+                    <li><strong>Projektportfolio-Gruppe</strong></li>
+                    <li><strong>PM-Expertenpool</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>PM-Office</h3>
+                <ul>
+                    <li>Kann <strong>verschiedene Aufgaben</strong> &uuml;bernehmen</li>
+                    <li>Aufgaben: <strong>PM-Support, PM-Beratung, PM-Standards, Portfoliokoordination</strong></li>
+                    <li>Anl&auml;sse zur Etablierung: <strong>Steigende Projektanzahl, Qualit&auml;tsprobleme, fehlende Standards</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>PM-Expertenpool</h3>
+                <ul>
+                    <li>Sammlung von <strong>PM-Expert/innen</strong></li>
+                    <li>Erm&ouml;glicht: <strong>Erfahrungsaustausch, Weiterentwicklung, Qualit&auml;tssicherung</strong></li>
+                    <li>Es erfolgt: <strong>Wissensmanagement, Methodenentwicklung, Coaching</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Personalmanagement in POU</h3>
+                <ul>
+                    <li>Prozesse: <strong>Personalauswahl, Personalentwicklung, Karrierepfade</strong></li>
+                    <li>Der <strong>PMA-Karrierepfad</strong> enth&auml;lt verschiedene Zertifizierungsebenen</li>
+                    <li>PM-Personal-disponierende Stellen: <strong>PM-Office, Linienmangement, HR</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ZUSAMMENFASSUNG / QUICK REFERENCE -->
+        <div class="topic-section" id="summary">
+            <h2 class="topic-title"><span class="icon">&#128161;</span> Schnell&uuml;bersicht: H&auml;ufigste Pr&uuml;fungsfallen</h2>
+
+            <div class="warning">
+                <div class="warning-title">&#9888;&#65039; TOP Fallen &ndash; Diese Antworten sind immer FALSCH</div>
+                <ul style="margin-top: 8px;">
+                    <li>&bdquo;Ein Projekt dauert nie l&auml;nger als ein Jahr&ldquo; &rarr; <strong>FALSCH</strong></li>
+                    <li>&bdquo;Projekte werden immer unternehmens&uuml;bergreifend durchgef&uuml;hrt&ldquo; &rarr; <strong>FALSCH</strong></li>
+                    <li>&bdquo;Kleinprojekte haben gr&ouml;&szlig;eren Detaillierungsgrad&ldquo; &rarr; <strong>FALSCH</strong></li>
+                    <li>&bdquo;Projektableitungen&ldquo; als Betrachtungsobjekt &rarr; <strong>FALSCH</strong></li>
+                    <li>&bdquo;Projektplanungsprozess&ldquo; als Teilprozess &rarr; <strong>FALSCH</strong></li>
+                    <li>&bdquo;Projektrealisierungsprozess&ldquo; als Teilprozess &rarr; <strong>FALSCH</strong></li>
+                    <li>&bdquo;Organizing&ldquo; als Phase der Teamentwicklung &rarr; <strong>FALSCH</strong></li>
+                    <li>&bdquo;Conforming&ldquo; als Phase der Teamentwicklung &rarr; <strong>FALSCH</strong></li>
+                    <li>&bdquo;Produktionsorientiert&ldquo; als Projektmerkmal &rarr; <strong>FALSCH</strong></li>
+                </ul>
+            </div>
+
+            <div class="highlight">
+                <div class="highlight-title">&#9989; Wichtige Merklisten</div>
+                <p><strong>5 PM-Teilprozesse:</strong> Projektstart &rarr; Koordination &rarr; Controlling &rarr; Diskontinuit&auml;tenmanagement &rarr; Projektabschluss</p>
+                <p><strong>Teamentwicklung:</strong> Forming &rarr; Storming &rarr; Norming &rarr; Performing &rarr; Adjourning</p>
+                <p><strong>EVA-Formel:</strong> CV = EV &minus; AC | SV = EV &minus; PV | CPI = EV/AC | SPI = EV/PV</p>
+                <p><strong>Organisationsformen:</strong> Einfluss (Dreieck) | Matrix (Kreis) | Reine PO (Viereck)</p>
+                <p><strong>Change:</strong> First Order = Koordination | Second Order = Controlling</p>
+            </div>
+        </div>
+
+    </div>
+
+    <button class="scroll-top" id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&uarr;</button>
+
+    <script>
+        // Scroll to top button
+        window.addEventListener('scroll', () => {
+            document.getElementById('scroll-top').classList.toggle('visible', window.scrollY > 300);
+        });
+
+        // Search/Filter
+        function filterSections() {
+            const query = document.getElementById('search').value.toLowerCase().trim();
+            const sections = document.querySelectorAll('.topic-section');
+            sections.forEach(sec => {
+                if (!query) {
+                    sec.style.display = '';
+                    // Show all cards
+                    sec.querySelectorAll('.card, .highlight, .warning, .info, .tip, .comparison-grid').forEach(el => el.style.display = '');
+                    return;
+                }
+                const text = sec.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    sec.style.display = '';
+                    // Highlight matching cards
+                    sec.querySelectorAll('.card').forEach(card => {
+                        card.style.display = card.textContent.toLowerCase().includes(query) ? '' : '';
+                    });
+                } else {
+                    sec.style.display = 'none';
+                }
+            });
+            // Also show/hide TOC
+            const toc = document.querySelector('.toc');
+            if (toc) toc.style.display = query ? 'none' : '';
+        }
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('.nav-bar a, .toc a').forEach(a => {
+            a.addEventListener('click', e => {
+                const href = a.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
